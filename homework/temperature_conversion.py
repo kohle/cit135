@@ -17,9 +17,10 @@
 # assignment on its database for the purpose of future plagiarism checking).   #
 ################################################################################
 
-# Welcome the user and initialize a converted temperature variable
+# Welcome the user and initialize converted temperature variables
 print("### Temperature Converter ###")
-new_temp = 0
+f_temp = 0
+c_temp = 0
 
 # Get the temperature to convert and whether it is currently C or F
 original_temp = input("What is the temperature you would like to convert? ")
@@ -31,13 +32,28 @@ original_temp = float(original_temp)
 # Check if the current temperature type is Celcius (ignore case)
 if original_type.lower() == "c" :
     # Convert into Fahrenheit
-    new_temp = original_temp * (9/5) + 32
-    print(str(original_temp) + "C is " + str(new_temp) + "F.")
+    f_temp = original_temp * (9/5) + 32
+    print(str(original_temp) + "C is " + str(f_temp) + "F.")
 
 # Otherwise it is Fahrenheit, so convert to Celcius
 elif original_type.lower() == "f" :
     # Convert into Celcius
-    new_temp = (original_temp - 32) * (5/9)
-    print(str(original_temp) + "F is " + str(new_temp) + "C.")
+    c_temp = (original_temp - 32) * (5/9)
+    print(str(original_temp) + "F is " + str(c_temp) + "C.")
 
-# TODO: Depending on the temperature, print a witty comment (at least 5)
+else :
+    # Didn't type C or F as a temperature type
+    print("Sorry, " + original_type + " is not a recognized scale.")
+    exit()
+
+# Depending on the temperature, print a witty comment
+
+### This is broken but I'm too tired to fix it right now
+if (f_temp <= 32) or (c_temp <= 0) :
+    print("Better grab your winter jacket!")
+
+elif (f_temp >= 65) or (c_temp >= 18) :
+    print("Seems like a lovely spring day!")
+
+elif (f_temp <= -10) or (c_temp <= -23) :
+    print("Better bundle up... don't want to get frostbite!")
