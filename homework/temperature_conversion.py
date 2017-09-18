@@ -19,41 +19,60 @@
 
 # Welcome the user and initialize converted temperature variables
 print("### Temperature Converter ###")
-f_temp = 0
-c_temp = 0
+new_temp = 0
 
-# Get the temperature to convert and whether it is currently C or F
-original_temp = input("What is the temperature you would like to convert? ")
+# Have the user enter the temperature they wish to convert
+original_temp = float(input("What is the temperature you would like to convert? "))
 original_type = input("Is this Celcius or Fahrenheit? (C/F) ")
-
-# Change the temperature input from a string into a number
-original_temp = float(original_temp)
 
 # Check if the current temperature type is Celcius (ignore case)
 if original_type.lower() == "c" :
     # Convert into Fahrenheit
-    f_temp = original_temp * (9/5) + 32
-    print(str(original_temp) + "C is " + str(f_temp) + "F.")
+    new_temp = original_temp * (9/5) + 32
+    print(str(original_temp) + "C is " + str(new_temp) + "F.")
+
+# Depending on the temperature, print a statement
+# (I know there's an easier way to do this outside of each temperature conversion
+# statement but I was having issues doing it)
+    if new_temp <= 0 :
+        print("It's below zero out... better to just stay home.")
+    
+    elif new_temp >= 1 :
+        print("Better grab your winter coat, it's COLD outside!")
+
+    elif new_temp >= 60 :
+        print("Plenty warm for shorts and t-shirts if you're in Vermont.")
+
+    elif new_temp >= 70 :
+        print("Starting to get pretty warm.")
+
+    elif new_temp > 80 :
+        print("This is way too hot for me...")
 
 # Otherwise it is Fahrenheit, so convert to Celcius
 elif original_type.lower() == "f" :
     # Convert into Celcius
-    c_temp = (original_temp - 32) * (5/9)
-    print(str(original_temp) + "F is " + str(c_temp) + "C.")
+    new_temp = (original_temp - 32) * (5/9)
+    print(str(original_temp) + "F is " + str(new_temp) + "C.")
+
+# Depending on the temperature, print a statement
+# (I know there's an easier way to do this outside of each temperature conversion
+# statement but I was having issues doing it)
+    if new_temp <= -17 :
+        print("It's below zero out... better to just stay home.")
+    
+    elif new_temp <= 0 :
+        print("Better grab your winter coat, it's COLD outside!")
+
+    elif new_temp <= 15 :
+        print("Plenty warm for shorts and t-shirts if you're in Vermont.")
+
+    elif new_temp <= 21 :
+        print("Starting to get pretty warm.")
+
+    elif new_temp >= 26 :
+        print("This is way too hot for me...")
 
 else :
     # Didn't type C or F as a temperature type
     print("Sorry, " + original_type + " is not a recognized scale.")
-    exit()
-
-# Depending on the temperature, print a witty comment
-
-### This is broken but I'm too tired to fix it right now
-if (f_temp <= 32) or (c_temp <= 0) :
-    print("Better grab your winter jacket!")
-
-elif (f_temp >= 65) or (c_temp >= 18) :
-    print("Seems like a lovely spring day!")
-
-elif (f_temp <= -10) or (c_temp <= -23) :
-    print("Better bundle up... don't want to get frostbite!")
