@@ -25,8 +25,8 @@ print("### DAY OF THE WEEK ###")
 # Ask the user for the day they wish to show
 day_choice = int(input("Enter a number 1-7 to be given the relevant day of the week: "))
 
-if day_choice <= 7 and day_choice >= 1 :
-    print(days[day_choice - 1])
+while day_choice < 1 or day_choice > 7 :
+    day_choice = int(input("Error! Please enter a number between 1 and 7: "))
 
 else :
-    print("You did not enter a number between 1 and 7!")
+    print(days[day_choice - 1])
