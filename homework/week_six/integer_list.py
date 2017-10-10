@@ -1,9 +1,9 @@
 # Kohle Feeley
 # CIT-135-01
-# Week Six - Problem 5 - Animal Name Dictionary
+# Week Six - Problem 2 - 1,000 Integer List
 # Assigned October 4, 2017
 # Due October 11, 2017
-# Make a dictionary with 10 animal types and their names
+# Fill a list with 1,000 integers between 10 and 99
 
 ################################################################################
 # Certification of Authenticity:  I certify that this is entirely my own work, #
@@ -16,23 +16,18 @@
 # assignment on its database for the purpose of future plagiarism checking).   #
 ################################################################################
 
-# Introduce the user to the program
-print("### ANIMAL NAME DICTIONARY ###")
+# Imports
+from random import randint
 
-# Make a dictionary with 10 animal types and add their names
-names = {'cow' : 'Bessie', 'dog' : 'Rufus', 'chicken' : 'Clucky', 'pig' : 'Porky',
-         'horse' : 'Spirit', 'goat' : 'Billy', 'bull' : 'Toro', 'sheep' : 'Wooly',
-         'donkey' : 'Dopey', 'duck' : 'Mallard'}
+# Introduce the program
+print("### WEEK 6 PRACTICE - PROBLEM 2 ###")
 
-# List the animal types available
-print("Available animal types are: ")
-for key in names.keys() :
-    print(key)
+# Create the empty list
+numbers = []
 
-# Ask the user for an input
-animal = input("Enter an animal to be given its name: ")
+# Use a while loop to populate it while the length is < 1,000
+while len(numbers) < 1000 :
+    numbers.append(randint(10, 99))
 
-if animal in names :
-    print("The name of the", str(animal), "is", names[animal])
-else :
-    print(animal, "is not a valid animal!")
+print("### THE LIST CONTAINS", str(len(numbers)), "INTEGERS ###")
+print(numbers)

@@ -1,9 +1,9 @@
 # Kohle Feeley
 # CIT-135-01
-# Week Six - Problem 5 - Animal Name Dictionary
-# Assigned October 4, 2017
-# Due October 11, 2017
-# Make a dictionary with 10 animal types and their names
+# Week 5 Practice Lab - Program 4
+# Assigned September 27, 2017
+# Due October 4, 2017
+# A list with ten integers between 1 and 50.
 
 ################################################################################
 # Certification of Authenticity:  I certify that this is entirely my own work, #
@@ -16,23 +16,21 @@
 # assignment on its database for the purpose of future plagiarism checking).   #
 ################################################################################
 
-# Introduce the user to the program
-print("### ANIMAL NAME DICTIONARY ###")
+# Introduce the player
+print("### WEEK 5 PRACTICE - PROGRAM 5 ###")
 
-# Make a dictionary with 10 animal types and add their names
-names = {'cow' : 'Bessie', 'dog' : 'Rufus', 'chicken' : 'Clucky', 'pig' : 'Porky',
-         'horse' : 'Spirit', 'goat' : 'Billy', 'bull' : 'Toro', 'sheep' : 'Wooly',
-         'donkey' : 'Dopey', 'duck' : 'Mallard'}
+# Create the list with ten integers between 1 and 50
+numbers = [1, 40, 3, 34, 7, 7, 12, 41, 22, 49]
 
-# List the animal types available
-print("Available animal types are: ")
-for key in names.keys() :
-    print(key)
+# Ask the user for an integer between 1 and 50 to check if it is in the program
+check_number = int(input("Enter a number between 1 and 50 to see if it in the list: "))
 
-# Ask the user for an input
-animal = input("Enter an animal to be given its name: ")
+if check_number >= 1 and check_number <= 100 :
+    if check_number in numbers :
+        print(str(check_number), "is in the list!")
+    
+    else :
+        print(str(check_number), "is NOT in the list!")
 
-if animal in names :
-    print("The name of the", str(animal), "is", names[animal])
 else :
-    print(animal, "is not a valid animal!")
+    print("You were supposed to enter a number between 1 and 50!")

@@ -1,9 +1,9 @@
 # Kohle Feeley
 # CIT-135-01
-# Week 5 Practice 1 - Three Variables
+# Week 5 Practice Lab - Program 1
 # Assigned September 27, 2017
 # Due October 4, 2017
-# Gets three pieces of information from the user and displays them
+# Takes three inputs from a user and converts the variable into the correct type
 
 ################################################################################
 # Certification of Authenticity:  I certify that this is entirely my own work, #
@@ -16,22 +16,29 @@
 # assignment on its database for the purpose of future plagiarism checking).   #
 ################################################################################
 
-### I gave up half way through this I'm not sure what the program is supposed to do
+# Ask the user for their name, their age, and a number with two decimal points
+print("### WEEK FIVE PRACTICE - PROGRAM 1 ###")
+name = input("What is your first name? ")
+age = input("What is your age? ")
+number = input("Please enter a number greater than 7, less than 100, and has two decimals: ")
 
-# Ask the user for their name
-name = input("Hi there! Can I have your name? ")
-
-# Ask the user for their age
-age = input("Thanks, can I have your age? ")
-
-# Convert their age into an integer
+# Convert them into their relevant types
+name = str(name)
 age = int(age)
 
-# Ask the user for a number > 7 but < 100 and with 2 decimal places
-number = 0
-
-while (number > 7) and (number < 100) :
-    number = float(input(name, "Please give me a number between 7 and 100, and include2 decimals please! "))
-
-print("Thanks!")
+# Now we need to check if the number has two decimal places
+while len(number.rsplit('.')[-1]) != 2 :
+    # If the number does NOT have two decimal places, ask again
+    number = input("Please enter a number greater than 7, less than 100, and has two decimals: ")
     
+    # Now that we know it has 2 decimal places, set it to a float
+    number = float(number)
+    
+    # If the number is not greater than 7 and less than 100
+    while number < 7 and number > 100 :
+        number = input("Please enter a number greater than 7, less than 100, and has two decimals: ")
+        
+# Print the variables with some comments
+print("Hello there," , str(name))
+print("You are", str(age), "years old.")
+print("You picked the number", str(number), ". Interesting choice!")

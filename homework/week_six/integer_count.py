@@ -1,9 +1,10 @@
 # Kohle Feeley
 # CIT-135-01
-# Week Six - Problem 5 - Animal Name Dictionary
+# Week Six - Problem 3 - Occurance Checker
 # Assigned October 4, 2017
 # Due October 11, 2017
-# Make a dictionary with 10 animal types and their names
+# Fill a list with 10 integers and count how many times an input appears in
+# the list. Integers between 1-50.
 
 ################################################################################
 # Certification of Authenticity:  I certify that this is entirely my own work, #
@@ -16,23 +17,27 @@
 # assignment on its database for the purpose of future plagiarism checking).   #
 ################################################################################
 
-# Introduce the user to the program
-print("### ANIMAL NAME DICTIONARY ###")
+# Imports
+from random import randint
 
-# Make a dictionary with 10 animal types and add their names
-names = {'cow' : 'Bessie', 'dog' : 'Rufus', 'chicken' : 'Clucky', 'pig' : 'Porky',
-         'horse' : 'Spirit', 'goat' : 'Billy', 'bull' : 'Toro', 'sheep' : 'Wooly',
-         'donkey' : 'Dopey', 'duck' : 'Mallard'}
+# Introduce the program
+print("### WEEK SIX PRACTICE - PROGRAM 3 ###")
 
-# List the animal types available
-print("Available animal types are: ")
-for key in names.keys() :
-    print(key)
+# Create an empty list
+numbers = []
 
-# Ask the user for an input
-animal = input("Enter an animal to be given its name: ")
+# Populate the list with ten random ints from 1-50
+while len(numbers) < 10 :
+    numbers.append(randint(1, 50))
 
-if animal in names :
-    print("The name of the", str(animal), "is", names[animal])
+# Print the contents of the list to the user
+print(numbers)
+
+# Ask the user for an input to count how many times it appears
+search_number = int(input("Enter a number in the list to count how many times it appears: "))
+
+if search_number in numbers :
+    print(str(search_number), "appears", str(numbers.count(search_number)), "times in the list.")
+
 else :
-    print(animal, "is not a valid animal!")
+    print(str(search_number), "does not appear in the list!")
