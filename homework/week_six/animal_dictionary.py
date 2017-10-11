@@ -32,7 +32,10 @@ for key in names.keys() :
 # Ask the user for an input
 animal = input("Enter an animal to be given its name: ")
 
-if animal in names :
-    print("The name of the", str(animal), "is", names[animal])
-else :
+# If the input is not in the dictionary, keep asking
+while animal not in names :
     print(animal, "is not a valid animal!")
+    animal = input("Enter an animal to be given its name: ")
+
+print("The name of the", str(animal), "is", names[animal])
+
