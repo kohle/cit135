@@ -38,4 +38,3 @@ while animal not in names :
     animal = input("Enter an animal to be given its name: ")
 
 print("The name of the", str(animal), "is", names[animal])
-
