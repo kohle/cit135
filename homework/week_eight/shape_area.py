@@ -39,17 +39,22 @@ print("Enter a shape to calculate the area for:")
 choice = input("[S]quare, [R]ectangle, [C]ircle, [T]riangle: ")
 
 
-if choice == "s" or choice == "r" :
+if choice.lower() == "s" or choice == "r" :
     length = int(input("Enter the length: "))
     width = int(input("Enter the width: "))
 
     print("The area of the shape is", str(rectangle(length, width)), "square units.")
 
-elif choice == "c" :
+elif choice.lower() == "c" :
     radius = int(input("Enter the radius of the circle: "))
 
     print("The area of the circle is", str(circle(radius)), "square units.")
 
-elif choice == "t" :
+elif choice.lower() == "t" :
     base = int(input("Enter the base of the triangle: "))
     height = int(input("Enter the height of the triangle: "))
+
+    print("The area of the triangle is", str(triangle(base, height)), "square units.")
+
+else :
+    print(choice, "is not a valid choice!")
