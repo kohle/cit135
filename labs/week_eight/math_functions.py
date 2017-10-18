@@ -27,7 +27,7 @@ def square(number) :
 def cube(number) :
     return number * number * number
 
-# Time to seconds
+# Hours/minutes to seconds
 def seconds(hours, minutes) :
     hours_to_seconds = hours * 60 * 60
     minutes_to_seconds = minutes * 60
