@@ -60,7 +60,9 @@ elif choice == "3" :
     print(str(hours), "hours and", str(minutes), "minutes is", str(seconds(hours, minutes)), "seconds.")
 
 elif choice == "4" :
-    seconds = int(input("Enter seconds of snowfall: "))
+    hours = int(input("Enter hours of snowfall: "))
+    minutes = int(input("Enter minutes of snowfall: "))
+    seconds = seconds(hours, minutes)
     flakes_per_second = int(input("Enter flakes per second: "))
 
     print(str(snowfall(seconds, flakes_per_second)), "inches is the depth of the snowfall.")
